@@ -2,13 +2,14 @@ title: C++ 17 Course
 description: This course provides an overview of the C++ 17 standard and its differences from older versions. It contains lessons and assignments for hands-on learning.
 
 modules:
+##
   - title: Introduction to C++ 17
     objectives:
       - Understand the history and evolution of C++
       - Know the differences between C++ 17 and older versions
     assignments:
       - Write a comparison of different C++ versions, focusing on their syntax and features. Implement some basic programs showing these differences.
-
+##
   - title: Basic Syntax and Conventions
     objectives:
       - Learn the syntax and conventions of C++
@@ -17,6 +18,45 @@ modules:
       - Create a basic calculator for basic operations such as addition, subtraction, multiplication, and division.
       - Implement a program that prints Fibonacci sequence up to n numbers where n is user-input.
 
+##
+  - title: Data Structures in C++ 17
+  objectives:
+    - Understand different types of data structures
+    - Learn about Arrays and Strings
+    - Discover Vectors
+    - Understand Sets and Maps
+    - Learn about Stacks and Queues
+  sections:
+    - name: Arrays and Strings
+      description: Basic static data structures.
+      methods:
+        - name: std::array
+          description: A container that encapsulates fixed size arrays.
+        - name: std::string
+          description: A sequence of characters.
+    - name: Vectors
+      description: Dynamic array.
+      methods:
+        - name: std::vector::push_back
+          description: Adds an element to the end.
+        - name: std::vector::pop_back
+          description: Removes the last element.
+    - name: Sets and Maps
+      description: Associative containers.
+      methods:
+        - name: std::set
+          description: A collection of unique keys, sorted by keys.
+        - name: std::map
+          description: A collection of key-value pairs, sorted by keys.
+    - name: Stacks and Queues
+      description: Container adaptors.
+      methods:
+        - name: std::stack
+          description: Provides a Last-In-First-Out data structure.
+        - name: std::queue
+          description: Provides a First-In-First-Out data structure.
+
+##
   - title: Object-Oriented Programming in C++
     objectives:
       - Understand classes and objects
@@ -25,6 +65,7 @@ modules:
       - Implement a simple Library Management System with classes for 'Book', 'Librarian', 'Member', using OOP principles.
       - Develop a basic Console Game (like Tic Tac Toe or Snake Game) employing OOP principles.
 
+##
   - title: Standard Template Library (STL)
     objectives:
       - Understand containers, algorithms, and iterators
@@ -33,6 +74,7 @@ modules:
       - Create a program that uses STL containers to manage a record of students.
       - Implement an STL-based program that demonstrates different types of sorting algorithms.
 
+##
   - title: New Features in C++ 17
     objectives:
       - Learn about new features in C++ 17 such as structured bindings, std::optional, std::variant
@@ -41,6 +83,7 @@ modules:
       - Modify the Library Management System to use std::optional for error handling.
       - Write a program that uses std::variant and structured bindings to store and process different data types.
 
+##
   - title: Advanced Topics
     objectives:
       - Learn about memory management, exception handling, and concurrency
@@ -49,9 +92,11 @@ modules:
       - Write a simple garbage collector in C++ to understand memory management.
       - Write a multi-threaded program that simulates a busy restaurant with multiple chefs (threads) and orders (tasks).
 
+##
   - title: Sample Projects
     objectives:
       - Apply what you've learned in real-world-like coding projects
     projects:
       - Create a command line utility that manipulates text files (e.g., word count, line count, etc.).
       - Build a simple chat server and client using socket programming.
+      

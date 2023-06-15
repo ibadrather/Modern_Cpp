@@ -12,7 +12,7 @@ C++ has seen several versions over the years, each bringing new features, improv
 - C++11: Introduced a renewed focus on performance and efficiency. Features include auto, range-based for loops, null pointer constants, and more.
 - C++14: Improved upon C++11 with minor bug fixes and feature improvements.
 - C++17: Brought significant changes and improvements over C++14, which we'll discuss further.
-- C++20: As of my knowledge cutoff in September 2021, this is the most recent version, bringing even more features and enhancements.
+- C++20: As of my knowledge this is the most recent version, bringing even more features and enhancements.
 
 ## C++ 17 vs Older Versions
 ### Enhancements in C++17
@@ -22,14 +22,12 @@ C++17 introduced several new features and improvements over its predecessors. So
 
 ```cpp
 auto [a, b] = make_pair(1, "hello");
-
 ```
 
 2. **Inline Variables**: C++17 allows inline specification for variables, which can be useful for defining variables in header files without running into multiple definition problems.
 
 ```cpp
 inline int var = 0;  // var is same across all translation units
-
 ```
 
 3. **Fold Expressions**: C++17 introduced fold expressions for more concise code involving variadic templates.
@@ -39,7 +37,6 @@ template<typename... Args>
 auto sum(Args... args) {
     return (... + args);  // Fold expression
 }
-
 ```
 
 4. **std::optional**: This type wrapper addresses scenarios where a function might or might not return a value.
@@ -49,7 +46,6 @@ std::optional<int> maybe_value = function_might_return();
 if(maybe_value) {
     int value = *maybe_value;
 }
-
 ```
 
 5. **std::variant**: This is a type-safe union, an instance of which can hold a value of any of its alternative types.
@@ -57,7 +53,6 @@ if(maybe_value) {
 ```cpp
 std::variant<int, float> intOrFloat = 3.14f;
 std::get<float>(intOrFloat);  // Will throw bad_variant_access if holds alternative type
-
 ```
 
 6. **std::string_view**: This is a non-owning reference to a string. It’s a more efficient way of passing around references to a string, without incurring the cost of copying.
@@ -66,7 +61,6 @@ std::get<float>(intOrFloat);  // Will throw bad_variant_access if holds alternat
 void print(std::string_view sv) {
     std::cout << sv;
 }
-
 ```
 
 7. **Parallel STL Algorithms**: C++17 added support for parallel versions of many standard algorithms, potentially providing significant speedups.
@@ -74,7 +68,6 @@ void print(std::string_view sv) {
 ```cpp
 std::vector<int> vec = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 std::sort(std::execution::par, vec.begin(), vec.end());
-
 ```
 
 ### Comparing C++17 with Older Versions
