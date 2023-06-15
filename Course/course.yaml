@@ -1,0 +1,57 @@
+title: C++ 17 Course
+description: This course provides an overview of the C++ 17 standard and its differences from older versions. It contains lessons and assignments for hands-on learning.
+
+modules:
+  - title: Introduction to C++ 17
+    objectives:
+      - Understand the history and evolution of C++
+      - Know the differences between C++ 17 and older versions
+    assignments:
+      - Write a comparison of different C++ versions, focusing on their syntax and features. Implement some basic programs showing these differences.
+
+  - title: Basic Syntax and Conventions
+    objectives:
+      - Learn the syntax and conventions of C++
+      - Write simple programs using C++
+    assignments:
+      - Create a basic calculator for basic operations such as addition, subtraction, multiplication, and division.
+      - Implement a program that prints Fibonacci sequence up to n numbers where n is user-input.
+
+  - title: Object-Oriented Programming in C++
+    objectives:
+      - Understand classes and objects
+      - Learn about encapsulation, inheritance, and polymorphism
+    assignments:
+      - Implement a simple Library Management System with classes for 'Book', 'Librarian', 'Member', using OOP principles.
+      - Develop a basic Console Game (like Tic Tac Toe or Snake Game) employing OOP principles.
+
+  - title: Standard Template Library (STL)
+    objectives:
+      - Understand containers, algorithms, and iterators
+      - Learn to use common STL classes and functions
+    assignments:
+      - Create a program that uses STL containers to manage a record of students.
+      - Implement an STL-based program that demonstrates different types of sorting algorithms.
+
+  - title: New Features in C++ 17
+    objectives:
+      - Learn about new features in C++ 17 such as structured bindings, std::optional, std::variant
+      - Understand the improvements in STL and how they simplify programming
+    assignments:
+      - Modify the Library Management System to use std::optional for error handling.
+      - Write a program that uses std::variant and structured bindings to store and process different data types.
+
+  - title: Advanced Topics
+    objectives:
+      - Learn about memory management, exception handling, and concurrency
+      - Understand the principles of template metaprogramming
+    assignments:
+      - Write a simple garbage collector in C++ to understand memory management.
+      - Write a multi-threaded program that simulates a busy restaurant with multiple chefs (threads) and orders (tasks).
+
+  - title: Sample Projects
+    objectives:
+      - Apply what you've learned in real-world-like coding projects
+    projects:
+      - Create a command line utility that manipulates text files (e.g., word count, line count, etc.).
+      - Build a simple chat server and client using socket programming.
