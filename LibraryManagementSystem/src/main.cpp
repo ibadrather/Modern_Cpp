@@ -1,88 +1,62 @@
 #include <iostream>
-#include "library.h"
-#include "book.h"
+
 #include "author.h"
+#include "book.h"
+#include "library.h"
 #include "patron.h"
 
 int main() {
+    // Creating authors
+    Author author1("J.K. Rowling", "31-07-1965");
+    Author author2("George R.R. Martin", "20-09-1948");
+
+    // Creating books
+    Book book1("Harry Potter and the Philosopher's Stone", &author1, "Fantasy",
+               1997);
+    Book book2("A Game of Thrones", &author2, "Fantasy", 1996);
+
+    // Add books to authors
+    author1.addBook(&book1);
+    author2.addBook(&book2);
+
+    // Creating library
     Library library;
 
-    // Add authors
-    library.addAuthor("John Doe", "1980-01-01");
-    library.addAuthor("Jane Smith", "1975-05-12");
+    // Adding authors to library
+    library.addAuthor(author1.getName(), author1.getDateOfBirth());
+    library.addAuthor(author2.getName(), author2.getDateOfBirth());
 
-    // Add books
-    library.addBook("The Great Book", "John Doe", "Fiction", 2022);
-    library.addBook("Science Explained", "Jane Smith", "Science", 2019);
-    library.addBook("Fantasy World", "John Doe", "Fantasy", 2021);
+    // Adding books to library
+    library.addBook(book1.getTitle(), author1.getName(), book1.getGenre(),
+                    book1.getPublicationYear());
+    library.addBook(book2.getTitle(), author2.getName(), book2.getGenre(),
+                    book2.getPublicationYear());
 
-    // Add patrons
-    library.addPatron("Alice Johnson", "1990-07-15");
-    library.addPatron("Bob Wilson", "1985-12-30");
+    // Creating patrons
+    Patron patron1("John Doe", "01-01-1990");
+    Patron patron2("Jane Doe", "01-01-1992");
 
-    // Retrieve and display all books
-    const std::vector<Book*>& books = library.getAllBooks();
-    std::cout << "All Books:\n";
-    for (const Book* book : books) {
-        std::cout << "Title: " << book->getTitle() << std::endl;
-        std::cout << "Author: " << book->getAuthor()->getName() << std::endl;
-        std::cout << "Genre: " << book->getGenre() << std::endl;
-        std::cout << "Publication Year: " << book->getPublicationYear() << std::endl;
-        std::cout << "-----------------------------\n";
-    }
+    // Adding patrons to library
+    library.addPatron(patron1.getName(), patron1.getDateOfBirth());
+    library.addPatron(patron2.getName(), patron2.getDateOfBirth());
 
-    // Retrieve and display all authors
-    const std::vector<Author*>& authors = library.getAllAuthors();
-    std::cout << "All Authors:\n";
-    for (const Author* author : authors) {
-        std::cout << "Author: " << author->getName() << std::endl;
-        std::cout << "Date of Birth: " << author->getDateOfBirth() << std::endl;
-        std::cout << "-----------------------------\n";
-    }
+    // Borrowing book
+    patron1.addBorrowedBook(&book1);
+    book1.setStatus(Status::BORROWED);
 
-    // Retrieve and display all patrons
-    const std::vector<Patron*>& patrons = library.getAllPatrons();
-    std::cout << "All Patrons:\n";
-    for (const Patron* patron : patrons) {
-        std::cout << "Patron: " << patron->getName() << std::endl;
-        std::cout << "Date of Birth: " << patron->getDateOfBirth() << std::endl;
-        std::cout << "-----------------------------\n";
-    }
-
-    // Example of borrowing books
-    Patron* alice = patrons[0];
-    Patron* bob = patrons[1];
-    Book* book1 = books[0];
-    Book* book2 = books[1];
-
-    // Alice borrows book1
-    alice->addBorrowedBook(book1);
-    std::cout << alice->getName() << " has borrowed " << book1->getTitle() << std::endl;
-
-    // Bob borrows book2
-    bob->addBorrowedBook(book2);
-    std::cout << bob->getName() << " has borrowed " << book2->getTitle() << std::endl;
-
-    // Example of returning books
-    alice->returnBook(book1);
-    std::cout << alice->getName() << " has returned " << book1->getTitle() << std::endl;
-
-    bob->returnBook(book2);
-    std::cout << bob->getName() << " has returned " << book2->getTitle() << std::endl;
-
-    // Example of adding new books for an author
-    Author* johnDoe = authors[0];
-    johnDoe->addBook("New Book 1", "Fantasy", 2023);
-    johnDoe->addBook("New Book 2", "Mystery", 2024);
-
-    std::cout << "Books written by " << johnDoe->getName() << ":\n";
-    const std::vector<Book*>& johnDoeBooks = johnDoe->getBooks();
-    for (const Book* book : johnDoeBooks) {
-        std::cout << "Title: " << book->getTitle() << std::endl;
-        std::cout << "Genre: " << book->getGenre() << std::endl;
-        std::cout << "Publication Year: " << book->getPublicationYear() << std::endl;
-        std::cout << "-----------------------------\n";
-    }
+    // Printing details
+    std::cout << "Author1 books count: " << author1.getBooks().size()
+              << std::endl;
+    std::cout << "Author2 books count: " << author2.getBooks().size()
+              << std::endl;
+    std::cout << "Library books count: " << library.getAllBooks().size()
+              << std::endl;
+    std::cout << "Library authors count: " << library.getAllAuthors().size()
+              << std::endl;
+    std::cout << "Library patrons count: " << library.getAllPatrons().size()
+              << std::endl;
+    std::cout << "Patron1 borrowed books count: "
+              << patron1.getBorrowedBooks().size() << std::endl;
 
     return 0;
 }

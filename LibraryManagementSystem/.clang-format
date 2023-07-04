@@ -1,0 +1,6 @@
+---
+Language:        Cpp
+# Use the Google coding style.
+BasedOnStyle:  Google
+IndentWidth:     4
+---
